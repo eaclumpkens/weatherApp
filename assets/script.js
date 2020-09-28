@@ -1,9 +1,11 @@
 $(document).ready(function() {
 
     $("h2").hide();
+    $(".card").hide();
 
     $(".search-button").on("click", function () {
         $("h2").show();
+        $(".card").show();
 
         var cityName = `${$("input").val()}`;
         var apiKey = "73f419ace0f37e311e27cdd095f41f82";
@@ -49,11 +51,11 @@ $(document).ready(function() {
 
                 $("#todays-date").text(`${moment().format('LL')}`);
 
-                var tempCel = `${Math.round(data.current.temp)}`;
-
                 function toFah(cel) {
                     return (Math.round((cel * (9/5)) + 32));
                 }
+
+                var tempCel = `${Math.round(data.current.temp)}`;
 
                 // // RENDER TEMP
                 $("#temp").text(`Temperature : ${tempCel} ºC / ${toFah(tempCel)} ºF`);
@@ -70,12 +72,31 @@ $(document).ready(function() {
                 // RENDER UV INDEX
                 $("#uv").text(`UV Index : ${data.current.uvi}`);
 
-                // TOMORROW'S FORECAST
+                // FUTRE FORECASTS
 
-                // +2 DAYS
+                $("#icon-1").attr("src", `http://openweathermap.org/img/wn/${data.daily[0].weather[0].icon}@2x.png`); 
+                // $("#date-1").text(``);
+                $("#temp-min-1").text(`${Math.round(data.daily[0].temp.min)} ºC / ${toFah(data.daily[0].temp.min)} ºF`);
+                $("#temp-max-1").text(`${data.daily[0].temp.max} ºC / ${toFah(data.daily[0].temp.max)} ºF`);
+                $("#hum-1").text(`${data.daily[0].humidity}`);
 
-                // +3 DAYS
+                $("#icon-2").attr("src", `http://openweathermap.org/img/wn/${data.daily[1].weather[0].icon}@2x.png`);
+                // $("#date-2").text(``);
+                $("#temp-min-2").text(`${Math.round(data.daily[1].temp.min)} ºC / ${toFah(data.daily[1].temp.min)} ºF`);
+                $("#temp-max-2").text(`${data.daily[1].temp.max} ºC / ${toFah(data.daily[1].temp.max)} ºF`);
+                $("#hum-2").text(`${data.daily[1].humidity}`);
 
+                $("#icon-3").attr("src", `http://openweathermap.org/img/wn/${data.daily[2].weather[0].icon}@2x.png`);
+                // $("#date-3").text(``);
+                $("#temp-min-3").text(`${Math.round(data.daily[2].temp.min)} ºC / ${toFah(data.daily[2].temp.min)} ºF`);
+                $("#temp-max-3").text(`${data.daily[2].temp.max} ºC / ${toFah(data.daily[2].temp.max)} ºF`);
+                $("#hum-3").text(`${data.daily[2].humidity}`);
+
+                $("#icon-4").attr("src", `http://openweathermap.org/img/wn/${data.daily[3].weather[0].icon}@2x.png`);
+                // $("#date-4").text(``);
+                $("#temp-min-4").text(`${Math.round(data.daily[3].temp.min)} ºC / ${toFah(data.daily[3].temp.min)} ºF`);
+                $("#temp-max-4").text(`${Math.round(data.daily[3].temp.max)} ºC / ${toFah(data.daily[3].temp.max)} ºF`);
+                $("#hum-4").text(`${data.daily[3].humidity}`);
             })
         })  
         
