@@ -14,24 +14,35 @@
 </head>
 <body>
     
-    <div class="container-fluid">
+    <div class="container">
 
         <!-- HEADER -->
 
         <header class="row">
-
             <h1 class="col-md-12">Weather API</h1>
-
         </header>
 
+        <!-- SEARCH BARS -->
+
+        <div id="desktop-search" class="row">
+            <input type="text" class="col-md-4" placeholder= "city name (e.g. new york)">
+            <button id="search-desktop-bt" type="button" class="search-button btn btn-light col-md-2">Search</button>
+        </div>
+
+        <div id="mobile-search" class="row">
+            <input type="text" class="col-md-10" placeholder= "city name (e.g. new york)">
+            <button id="search-mobile-bt" type="button" class="search-button btn btn-light col-md-2 btn-sm">Search</button>
+        </div>
+
+        <!-- SEARCH HISTORY -->
+
+        <div class="row">
+            <span id="search-buttons" class="col-md-7"></span>
+        </div>
+
+        <!-- DATA DISPLAY -->
+
         <main>
-
-            <!-- SEARCH BAR -->
-
-            <div class="row">
-                <input type="text" class="col-md-4" placeholder= "city name (e.g. new york)">
-                <button id="search-button" type="button" class="btn btn-light col-md-1">Search</button>
-            </div>
 
             <!-- RENDER WEATHER -->
 
@@ -51,24 +62,18 @@
 
                 <!-- TODAY -->
 
-                <div id="data-container" class="col-md-5">
+                <div id="data-container" class="col-md-12">
                     <div id="temp-div" class="row">
-                        <p class="col-md-5"><span id="temp"></span></p>
-                    </div>
-
-                    <div id="temp-div" class="row">
-                        <p class="col-md-5"><span id="humidity"></span></p>
+                        <p class="col-md-6"><span id="temp"></span></p>
+                        <p class="col-md-6"><span id="humidity"></span></p>
                     </div>
                     
                     <div class="row">
-                        <p class="col-md-5"><span id="wind"></span></p>
+                        <p class="col-md-6"><span id="wind"></span></p>
+                        <p class="col-md-6"><span id="uv"></span></p>
                     </div>
 
-                    <div class="row">
-                        <p class="col-md-5"><span id="uv"></span></p>
-                    </div>
                 </div>
-
 
             </div>
 

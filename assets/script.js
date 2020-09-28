@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     $("h2").hide();
 
-    $("#search-button").on("click", function () {
+    $(".search-button").on("click", function () {
         $("h2").show();
 
         var cityName = `${$("input").val()}`;
@@ -27,9 +27,23 @@ $(document).ready(function() {
             }).then(function(data){
 
                 console.log(data);
-            
+
+                var city = response.city.name;
+                var country = response.city.country;
+
+                // SEARCH HISTORY
+
+                var newButton = $("<button>");
+                newButton.text(`${city}`);
+                newButton.attr("type", "button");
+                newButton.attr("data-city", `${city}`);
+                newButton.attr("data-country", `${country}`);
+                newButton.addClass("search col-md-2 btn btn-light btn-sm");
+
+                $("#search-buttons").append(newButton);
+
                 // // RENDER CITY
-                $("#city-name").text(`${response.city.name}, ${response.city.country}`);
+                $("#city-name").text(`${city}, ${country}`);
 
                 // // RENDER DATE
 

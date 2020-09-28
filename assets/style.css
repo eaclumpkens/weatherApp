@@ -1,4 +1,4 @@
-* {
+body {
     background: rgb(22, 21, 21);
     color:rgb(224, 220, 220);
     font-size: 15px;
@@ -31,8 +31,14 @@ i {
 
 /* INPUT */
 
-#weather-container {
-    margin-left: -1%;
+#mobile-search {
+    display: none;
+}
+
+#desktop-search {
+    display: inline-flex;
+    width: 100%;
+    margin-left: 0%;
 }
 
 input {
@@ -40,17 +46,43 @@ input {
     color: #000;
     border: none;
     font-weight: 300;
+    margin-left: 20%;
 }
 
-button {
-    margin-left: 3%;
+#search-desktop-bt {
+    margin-left: 1%;
+}
+
+/* SEARCH  HISTORY */
+
+/* #search-text {
+    font-size: 0.8rem; 
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    margin: 0.9% 0% 1%  -1.5%;
+} */
+
+#search-buttons {
+    margin: 1% 0% 0% 19%;
+}
+
+.search {
+    font-size: 0.7rem;
+    margin-left: 1%;
+    margin-top: 1%;
 }
 
 /* DATA */
 
+#weather-container {
+    margin-top: 1%;
+    margin-left: -6%
+}
+
 #data-container {
     margin-left: -1%;
 }
+
 
 h3 {
     margin-top: 2%;
@@ -87,4 +119,51 @@ footer i {
 
 footer i:hover {
     opacity: 0.5;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 480px) {
+    
+    header, main {
+        padding: 1% 4% 1% 4%;
+    }
+
+    h1 {
+        font-size: 3.3rem;
+    }
+
+    button {
+        margin-top: 2%;
+        margin-bottom: 3%;
+    }
+
+    img {
+        width: 4rem;
+        margin-bottom: 3%;
+    }
+
+    /* REMOVE DESKTOP SEARCH */
+    #desktop-search {
+        display: none;
+    }
+
+    /* MOBILE SEARCH */
+
+    input {
+        font-size: 0.8rem;
+        font-weight: 400;
+        letter-spacing: 0.07rem;
+        margin: 0% 1% 1% 10%;
+    }
+
+    #mobile-search {
+        display: inline-block;
+        width: 53%;
+    }
+
+    #search-mobile-bt {
+        width: 4rem;
+    }
+
 }
