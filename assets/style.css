@@ -21,6 +21,7 @@ header {
 }
 
 h1 {
+    margin-left: -8%;
     font-size: 5rem;
     font-weight: 100;
     letter-spacing: 0.3rem;
@@ -78,13 +79,14 @@ input {
 }
 
 #data-container {
-    margin-left: -1%;
+    margin-left: -1.6%;
     color:rgb(224, 220, 220);
 }
 
 h2 {
     margin-top: 2%;
     margin-bottom: 0.4%;
+
     font-weight: 600;
     font-size: 160%;
 }
@@ -92,6 +94,7 @@ h2 {
 h3 {
     margin-top: -0.8%;
     margin-bottom: -0.8%;
+    margin-left: 0%;
     font-weight: 100;
     font-size: 190%;
 }
@@ -110,6 +113,7 @@ img {
 
 #future-data {
     margin-left: -4%;
+    margin-top: 2%;
 }
 
 h4 { 
