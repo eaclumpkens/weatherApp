@@ -64,7 +64,7 @@ input {
     margin: 1% 0% 0% 20%;
 }
 
-.search {
+.new-button {
     font-size: 0.7rem;
     margin-left: 1%;
     margin-top: 1%;
@@ -170,7 +170,7 @@ footer i:hover {
         font-size: 3.3rem;
     }
 
-    button {
+    #main-button {
         margin-top: 2%;
         margin-bottom: 3%;
     }

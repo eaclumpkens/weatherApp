@@ -110,13 +110,8 @@ $(document).ready(function() {
         }) 
     }
 
-    var searchHistory = [];
-    var uniqueArray = [];
-
-
     $(".main-button").on("click", function (event) {
         inputValue = $(this).val();
-        searchHistory.push(inputValue);
 
         event.preventDefault();
         searchWeather(inputValue);
