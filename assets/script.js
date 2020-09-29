@@ -2,9 +2,26 @@ $(document).ready(function() {
 
     $("main").hide();
 
-    $("input").on("keyup", function() {
-        $(".main-button").attr("value", `${$(this).val()}`);
-    });
+    function createButton(x) {
+
+        var newButton = $("<button>");
+        newButton.text(`${x}`);
+        newButton.attr("type", "button");
+        newButton.attr("value", `${x}`);
+        newButton.addClass("new-button col-md-2 btn btn-light btn-sm");
+
+        $("#search-buttons").append(newButton);
+
+    }
+
+    function pastSearch() {
+
+        if (localStorage["data"]) {
+            searchWeather(localStorage["data"]);
+            createButton(localStorage["data"]);
+        }
+
+    }
 
     function searchWeather(cityName) {
 
@@ -52,7 +69,7 @@ $(document).ready(function() {
                 $("#temp").text(`${tempCel} ºC | ${toFah(tempCel)} ºF`);
                 
                 // // RENDER HUMIDITY
-                $("#humidity").text(`${data.current.humidity}%`)
+                $("#humidity").text(`${data.current.humidity} %`)
 
                 // // RENDER WIND SPEED
                 $("#wind").text(`${Math.round((data.current.wind_speed)*2.237)} mph`)
@@ -87,28 +104,34 @@ $(document).ready(function() {
                 
                 $("#temp-min-1").text(`${Math.round(data.daily[0].temp.min)}ºC | ${toFah(data.daily[0].temp.min)}ºF`);
                 $("#temp-max-1").text(`${Math.round(data.daily[0].temp.max)}ºC | ${toFah(data.daily[0].temp.max)}ºF`);
-                $("#hum-1").text(`${data.daily[0].humidity}%`);
+                $("#hum-1").text(`${data.daily[0].humidity} %`);
 
                 $("#icon-2").attr("src", `http://openweathermap.org/img/wn/${data.daily[1].weather[0].icon}@2x.png`);
                 $("#date-2").text(`${moment().add(2, 'days').format('MMM Do')}`);
                 $("#temp-min-2").text(`${Math.round(data.daily[1].temp.min)}ºC | ${toFah(data.daily[1].temp.min)}ºF`);
                 $("#temp-max-2").text(`${Math.round(data.daily[1].temp.max)}ºC | ${toFah(data.daily[1].temp.max)}ºF`);
-                $("#hum-2").text(`${data.daily[1].humidity}%`);
+                $("#hum-2").text(`${data.daily[1].humidity} %`);
 
                 $("#icon-3").attr("src", `http://openweathermap.org/img/wn/${data.daily[2].weather[0].icon}@2x.png`);
                 $("#date-3").text(`${moment().add(3, 'days').format('MMM Do')}`);
                 $("#temp-min-3").text(`${Math.round(data.daily[2].temp.min)}ºC | ${toFah(data.daily[2].temp.min)}ºF`);
                 $("#temp-max-3").text(`${Math.round(data.daily[2].temp.max)}ºC | ${toFah(data.daily[2].temp.max)}ºF`);
-                $("#hum-3").text(`${data.daily[2].humidity}%`);
+                $("#hum-3").text(`${data.daily[2].humidity} %`);
 
                 $("#icon-4").attr("src", `http://openweathermap.org/img/wn/${data.daily[3].weather[0].icon}@2x.png`);
                 $("#date-4").text(`${moment().add(4, 'days').format('MMM Do')}`);
                 $("#temp-min-4").text(`${Math.round(data.daily[3].temp.min)}ºC | ${toFah(data.daily[3].temp.min)}ºF`);
                 $("#temp-max-4").text(`${Math.round(data.daily[3].temp.max)}ºC | ${toFah(data.daily[3].temp.max)}ºF`);
-                $("#hum-4").text(`${data.daily[3].humidity}%`);
+                $("#hum-4").text(`${data.daily[3].humidity} %`);
             })
         }) 
     }
+
+    pastSearch();
+
+    $("input").on("keyup", function() {
+        $(".main-button").attr("value", `${$(this).val()}`);
+    }); 
 
     $(".main-button").on("click", function (event) {
         inputValue = $(this).val();
@@ -116,19 +139,17 @@ $(document).ready(function() {
         event.preventDefault();
         searchWeather(inputValue);
 
-        var newButton = $("<button>");
-        newButton.text(`${inputValue}`);
-        newButton.attr("type", "button");
-        newButton.attr("value", `${inputValue}`);
-        newButton.addClass("new-button col-md-2 btn btn-light btn-sm");
-
-        $("#search-buttons").append(newButton);
+        createButton(inputValue);
 
         $(".new-button").on("click", function(event) {
             event.preventDefault();
             searchWeather($(this).val());
         })
 
+        if (inputValue) {
+            localStorage["data"] = inputValue;
+        } 
+ 
     });
 
 });
