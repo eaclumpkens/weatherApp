@@ -64,7 +64,7 @@ $(document).ready(function() {
                 $("#humidity").text(`${data.current.humidity}%`)
 
                 // // RENDER WIND SPEED
-                $("#wind").text(`${data.current.wind_speed}`)
+                $("#wind").text(`${Math.round((data.current.wind_speed)*2.237)} mph`)
             
                 // // RENDER IMAGE
                 $("#icon").attr("src", `http://openweathermap.org/img/wn/${response.list[0].weather[0].icon}@2x.png`);

@@ -107,6 +107,10 @@ img {
 
 /* CARDS */
 
+#future-data {
+    margin-left: -4%;
+}
+
 h4 { 
     font-size: 110%;
     text-align: center;
