@@ -2,11 +2,14 @@ $(document).ready(function() {
 
     $("main").hide();
 
-    $(".search-button").on("click", function () {
+    $("input").on("keyup", function() {
+        $(".main-button").attr("value", `${$(this).val()}`);
+    });
+
+    function searchWeather(cityName) {
 
         $("main").show();
 
-        var cityName = `${$("input").val()}`;
         var apiKey = "73f419ace0f37e311e27cdd095f41f82";
         var queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&appid=${apiKey}`;
     
@@ -31,17 +34,6 @@ $(document).ready(function() {
 
                 var city = response.city.name;
                 var country = response.city.country;
-
-                // SEARCH HISTORY
-
-                var newButton = $("<button>");
-                newButton.text(`${city}`);
-                newButton.attr("type", "button");
-                newButton.attr("data-city", `${city}`);
-                newButton.attr("data-country", `${country}`);
-                newButton.addClass("search col-md-2 btn btn-light btn-sm");
-
-                $("#search-buttons").append(newButton);
 
                 // // RENDER CITY
                 $("#city-name").text(`${city}, ${country}`);
@@ -79,7 +71,7 @@ $(document).ready(function() {
                         return $("#uv").attr("style", "color:#ffb400; font-weight: 500;");
                     } else if (uvData > 5 && uvData < 8) {
                         return $("#uv").attr("style", "color:#ff8d00; font-weight: 500;");
-                    } else if (uvData > 7 && uvData < 11) {
+                    } else if (uvData > 7 && uvData < 10) {
                         return $("#uv").attr("style", "color:#ec6e4c; font-weight: 500;");
                     } else {
                         return $("#uv").attr("style", "color:#cb79d3; font-weight: 500;");
@@ -88,7 +80,6 @@ $(document).ready(function() {
                 }
 
                 uvCondition(data.current.uvi);
-
 
                 // FUTRE FORECASTS
 
@@ -116,9 +107,39 @@ $(document).ready(function() {
                 $("#temp-max-4").text(`${Math.round(data.daily[3].temp.max)}ºC | ${toFah(data.daily[3].temp.max)}ºF`);
                 $("#hum-4").text(`${data.daily[3].humidity}%`);
             })
-        })  
-        
+        }) 
+    }
 
-    })
+    var searchHistory = [];
+    var uniqueArray = [];
+
+
+    $(".main-button").on("click", function (event) {
+        inputValue = $(this).val();
+        searchHistory.push(inputValue);
+
+        event.preventDefault();
+        searchWeather(inputValue);
+
+        var newButton = $("<button>");
+        newButton.text(`${inputValue}`);
+        newButton.attr("type", "button");
+        newButton.attr("value", `${inputValue}`);
+        newButton.addClass("new-button col-md-2 btn btn-light btn-sm");
+
+        $("#search-buttons").append(newButton);
+
+        $(".new-button").on("click", function(event) {
+            event.preventDefault();
+            searchWeather($(this).val());
+        })
+
+    });
 
 });
+
+    
+
+
+
+
