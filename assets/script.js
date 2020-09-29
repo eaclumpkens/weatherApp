@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
     $("main").hide();
 
     $(".search-button").on("click", function () {

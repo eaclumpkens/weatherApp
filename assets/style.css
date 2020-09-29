@@ -82,14 +82,14 @@ input {
     color:rgb(224, 220, 220);
 }
 
-
-h3 {
+h2 {
     margin-top: 2%;
+    margin-bottom: 0.4%;
     font-weight: 600;
     font-size: 160%;
 }
 
-h2 {
+h3 {
     margin-top: -0.8%;
     margin-bottom: -0.8%;
     font-weight: 100;
@@ -98,6 +98,7 @@ h2 {
 
 img {
     width: 5rem;
+    margin-bottom: 2%;
 }
 
 .current-data {
