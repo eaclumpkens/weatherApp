@@ -38,10 +38,6 @@ i {
 
 /* INPUT */
 
-#mobile-search {
-    display: none;
-}
-
 #desktop-search {
     display: inline-flex;
     width: 100%;
@@ -60,19 +56,23 @@ input {
 
 /* SEARCH  HISTORY */
 
+#search-buttons {
+    padding: 0%;
+}
+
 .new-button {
     font-size: 0.8rem;
     font-weight: 400;
     letter-spacing: 0.1rem;
     margin-left: 1%;
     margin-top: 2%;
-    float: left;
+    float: initial;
 }
 
 /* DATA */
 
 #weather-container {
-    margin-top: 1%;
+    padding: 1% 10% 1% 10%;
 }
 
 #data-container {
@@ -161,13 +161,16 @@ footer i:hover {
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 480px) {
-    
-    header, main {
-        padding: 1% 4% 1% 4%;
+
+    .container-fluid {
+        text-align: left;
+        float: left;
+        width: 100%;
     }
 
+
     h1 {
-        font-size: 3.3rem;
+        font-size: 2rem;
     }
 
     #main-button {
@@ -179,28 +182,28 @@ footer i:hover {
         width: 4rem;
         margin-bottom: 3%;
     }
-
-    /* REMOVE DESKTOP SEARCH */
-    #desktop-search {
-        display: none;
-    }
-
     /* MOBILE SEARCH */
 
     input {
         font-size: 0.8rem;
         font-weight: 400;
         letter-spacing: 0.07rem;
-        margin: 0% 1% 1% 10%;
     }
 
-    #mobile-search {
-        display: inline-block;
-        width: 53%;
+    #desktop-search {
+        margin: 0 auto;
     }
 
-    #search-mobile-bt {
-        width: 4rem;
+    #search-desktop-bt {
+        margin-top: 5%;
+        margin-bottom: 1%;
+    }
+
+    /* CARDS */
+
+    .card {
+        max-width: 25%;
+        font-size: 50%;
     }
 
 }
