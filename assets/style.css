@@ -82,7 +82,6 @@ input {
 h2 {
     margin-top: 2%;
     margin-bottom: 0.4%;
-
     font-weight: 600;
     font-size: 160%;
 }
@@ -129,6 +128,8 @@ h4 {
 
 .card-body {
     text-align: center;
+    padding: 0% 0% 10% 0%;
+
 }
 
 .card-body p {
