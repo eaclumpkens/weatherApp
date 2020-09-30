@@ -182,6 +182,16 @@ footer i:hover {
         width: 4rem;
         margin-bottom: 3%;
     }
+
+    #todays-date, #city-name {
+        font-size: 80%;
+    }
+
+    h3 {
+        margin-top: -3%;
+        margin-bottom: -3%;
+    }
+
     /* MOBILE SEARCH */
 
     input {
@@ -197,6 +207,12 @@ footer i:hover {
     #search-desktop-bt {
         margin-top: 5%;
         margin-bottom: 1%;
+    }
+
+    /* DATA */
+
+    #data-container {
+         margin-left: -5%;
     }
 
     /* CARDS */
