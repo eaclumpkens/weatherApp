@@ -2,10 +2,7 @@ body {
     font-family: 'Raleway', sans-serif;
     background: rgb(22, 21, 21);
     font-size: 15px;
-}
-
-header, main {
-    padding-left: 25%;
+    text-align: left;
 }
 
 p {
@@ -14,14 +11,18 @@ p {
 
 /* HEADER */
 
+.container-fluid {
+    text-align: center;
+    width: 50%;
+}
+
 header {
     margin: 4% 0% 0.4% 0%;
-    padding-left: 24%;
     color:rgb(224, 220, 220);
+    text-align: center;
 }
 
 h1 {
-    margin-left: -8%;
     font-size: 5rem;
     font-weight: 100;
     letter-spacing: 0.3rem;
@@ -44,7 +45,6 @@ i {
 #desktop-search {
     display: inline-flex;
     width: 100%;
-    margin-left: 0%;
 }
 
 input {
@@ -52,7 +52,6 @@ input {
     color: #000;
     border: none;
     font-weight: 300;
-    margin-left: 21%;
 }
 
 #search-desktop-bt {
@@ -61,25 +60,22 @@ input {
 
 /* SEARCH  HISTORY */
 
-#search-buttons {
-    margin: 1% 0% 0% 20%;
-}
-
 .new-button {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
     margin-left: 1%;
-    margin-top: 1%;
+    margin-top: 2%;
+    float: left;
 }
 
 /* DATA */
 
 #weather-container {
     margin-top: 1%;
-    margin-left: -5%
 }
 
 #data-container {
-    margin-left: -1.6%;
     color:rgb(224, 220, 220);
 }
 
@@ -112,7 +108,6 @@ img {
 /* CARDS */
 
 #future-data {
-    margin-left: -4%;
     margin-top: 2%;
 }
 
@@ -123,7 +118,8 @@ h4 {
 
 .card {
     padding: 0%;
-    margin: 0% 0.5% 0% 0.5%;
+    margin: 0 auto;
+    opacity: 0.95;
 }
 
 .card-img-top {
@@ -132,7 +128,7 @@ h4 {
 }
 
 .card-body {
-    margin-top: -10%;
+    text-align: center;
 }
 
 .card-body p {
