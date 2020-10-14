@@ -39,8 +39,8 @@ i {
 /* INPUT */
 
 #desktop-search {
-    display: inline-flex;
     width: 100%;
+    margin: 0%;
 }
 
 input {
@@ -61,7 +61,7 @@ input {
 }
 
 .new-button {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 400;
     letter-spacing: 0.1rem;
     margin-left: 1%;
@@ -196,6 +196,7 @@ footer i:hover {
     /* MOBILE SEARCH */
 
     input {
+        width: 66% !important;
         height: 2rem;
         font-size: 0.8rem;
         font-weight: 400;
@@ -203,13 +204,14 @@ footer i:hover {
     }
 
     #desktop-search {
+        display: inline-flex;
         margin: 0 auto;
-
     }
 
     #search-desktop-bt {
-        margin-top: 5%;
-        margin-bottom: 1%;
+        width: 33% !important;
+        height: 2rem;
+        padding: 0.1rem;
     }
 
     /* SEARCH HISTORY */
