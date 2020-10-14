@@ -119,6 +119,7 @@ h4 {
     padding: 0%;
     margin: 0 auto;
     opacity: 0.95;
+    min-width: 8rem !important;
 }
 
 .card-img-top {
@@ -129,7 +130,6 @@ h4 {
 .card-body {
     text-align: center;
     padding: 0% 0% 10% 0%;
-
 }
 
 .card-body p {
@@ -196,6 +196,7 @@ footer i:hover {
     /* MOBILE SEARCH */
 
     input {
+        height: 2rem;
         font-size: 0.8rem;
         font-weight: 400;
         letter-spacing: 0.07rem;
@@ -203,11 +204,18 @@ footer i:hover {
 
     #desktop-search {
         margin: 0 auto;
+
     }
 
     #search-desktop-bt {
         margin-top: 5%;
         margin-bottom: 1%;
+    }
+
+    /* SEARCH HISTORY */
+
+    .new-button {
+        width: 32% !important;
     }
 
     /* DATA */
@@ -219,8 +227,9 @@ footer i:hover {
     /* CARDS */
 
     .card {
-        max-width: 25%;
-        font-size: 50%;
+        max-width: 9rem;
+        font-size: 80%;
+        margin-bottom: 1rem;
     }
 
 }
