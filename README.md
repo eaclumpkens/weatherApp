@@ -1,17 +1,17 @@
-###weatherApp
+### weatherApp
 
 ---- 
 [launch project](eaclumpkens.github.io/dayplanner/)
 
 >In this project I utilized Open Weather API to render current and near future climate data on the user's input of a city name. A search history is automatically updated and rendered, the most recently searched item being saved to local storage. On refresh, the previous session's last searched city is rendered.
 
-###User-Story
+### User-Story
 
 >AS someone who interacts with the climate everyday
 >I WANT to see forecast and relevant climate data for today and the near future
 >SO THAT I can dress and plan my week accordingly
 
-###Project Criteria
+### Project Criteria
 
 >GIVEN a weather dashboard with form inputs
 >WHEN I search for a city
@@ -27,7 +27,7 @@
 >WHEN I open the weather dashboard
 >THEN I am presented with the last searched city forecast
 
-####Desktop Version
+#### Desktop Version
 ![landing page](./assets/images/desktop-01.png)
 ![weather search rendered](./assets/images/desktop-02.png)
 ![multi-search](./assets/images/desktop-03.png)
@@ -35,6 +35,6 @@
 ![refresh shows previous data](./assets/images/desktop-05.png)
 
 
-####Mobile Version
+#### Mobile Version
 ![mobile view](./assets/images/mobile-01.jpeg)
 ![responsive design](./assets/images/mobile-02.jpeg)
