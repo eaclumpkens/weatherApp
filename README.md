@@ -29,11 +29,13 @@ SO THAT I can dress and plan my week accordingly
 ----
 
 <a name="installation"></a>
+
 ### Installation
 
 `git clone` repository
 
 <a name="usage"></a>
+
 ### Usage
 
 ```
@@ -52,26 +54,31 @@ WHEN I open the weather dashboard
 THEN I am presented with the last searched city forecast
 ```
 <a name="contribution"></a>
+
 ### Contribution
 
 Single contribution project 
 
 <a name="tests"></a>
+
 ### Tests
 
 Currently no testing
 
 <a name="images"></a>
+
 ### Images
-#####Desktop Version
+
+##### Desktop Version
 ![desktop-demo](./assets/images/desktop-demo.gif)
 
-#####Mobile Version
+##### Mobile Version
 ![mobile-demo](./assets/images/mobile-demo.gif)
 
 ----
 
 <a name="questions"></a>
+
 ### Questions
 ##### Contact Me
 
